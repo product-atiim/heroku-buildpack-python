@@ -20,7 +20,7 @@ mkdir -v -p $BUILD_DIR/.heroku/vendor
 pushd $BUILD_DIR/.heroku/vendor
 rm -rf node
 mv $tempdir/$NODE_BASENAME node
-ln -s -f node/bin/node .heroku/python/bin/node
-ln -s -f node/bin/node-waf .heroku/python/bin/node-waf
-ln -s -f node/bin/npm .heroku/python/bin/npm
+ln -s -f node/bin/node $HOME/.heroku/python/bin/node
+ln -s -f node/bin/node-waf $HOME/.heroku/python/bin/node-waf
+ln -s -f node/bin/npm $HOME/.heroku/python/bin/npm
 popd
