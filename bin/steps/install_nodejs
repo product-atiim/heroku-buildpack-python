@@ -31,5 +31,4 @@ if [ ! -f "${HOME}/.heroku/python/bin/node" ];
         echo "-----> Installed node"
 fi
 
-echo "-----> Node available at ${HOME}/.heroku/python/bin/node"
-ls -l $HOME/.heroku/python/bin/node
+echo "-----> Node available at version $(node --version)"
