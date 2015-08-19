@@ -8,4 +8,4 @@ if [ -f bin/pre_compile ]; then
     sub-env bin/pre_compile
 fi
 
-pre_compile
+sub-env $BIN_DIR/steps/pre_compile

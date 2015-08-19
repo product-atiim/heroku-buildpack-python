@@ -9,17 +9,11 @@ echo "-----> Default web pre-compile hook"
 # compile phase. See: https://github.com/heroku/heroku-buildpack-python/issues/57
 export MEMCACHE_SERVERS='' MEMCACHIER_SERVERS=''
 
-if [ -f install_nodejs ]; then
-    echo "-----> Running install_nodejs"
-    chmod +x install_nodejs
-    install_nodejs
+echo "-----> Running install_nodejs"
+$BIN_DIR/steps/install_nodejs
 
-    if [ -f install_yuglify ]; then
-        echo "-----> Running install_yuglify"
-        chmod +x bin/install_yuglify
-        install_yuglify
-    fi
-fi
+echo "-----> Running install_yuglify"
+$BIN_DIR/steps/install_yuglify
 
 #~ if [ -f bin/run_collectstatic ]; then
     #~ echo "-----> Running run_collectstatic"
