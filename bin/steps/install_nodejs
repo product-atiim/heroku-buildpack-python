@@ -31,5 +31,5 @@ if [ -f "$NODE_HOME" ];
         echo "-----> Installed node"
 fi
 
-echo "-----> Node available at ${$HOME}/.heroku/python/bin/node"
+echo "-----> Node available at ${HOME}/.heroku/python/bin/node"
 ls -l $HOME/.heroku/python/bin/node
