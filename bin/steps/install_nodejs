@@ -6,7 +6,7 @@ NODE_BASENAME=node-v${NODE_VERSION}-linux-x64
 NODE_ARCHIVE="http://nodejs.org/dist/v${NODE_VERSION}/${NODE_BASENAME}.tar.gz"
 NODE_HOME=${BUILD_DIR}/.heroku/vendor/${NODE_BASENAME}
 
-if [ -f "$NODE_HOME" ];
+if [ -f "${HOME}/.heroku/python/bin/node" ];
     then
         echo "-----> Installing node"
         # make a temp directory
@@ -20,7 +20,7 @@ if [ -f "$NODE_HOME" ];
         rm tmp-nodejs.tar.gz
 
         mkdir -v -p $BUILD_DIR/.heroku/vendor
-        rm -rf $NODE_HOME
+        rm -rf ${BUILD_DIR}/.heroku/vendor/node*
         mv $tempdir/$NODE_BASENAME $NODE_HOME
         mkdir -v -p $HOME/.heroku/python/bin
         ln -s -f $NODE_HOME/node $HOME/.heroku/python/bin/node
