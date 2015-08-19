@@ -6,28 +6,30 @@ NODE_BASENAME=node-v${NODE_VERSION}-linux-x64
 NODE_ARCHIVE="http://nodejs.org/dist/v${NODE_VERSION}/${NODE_BASENAME}.tar.gz"
 NODE_HOME=${BUILD_DIR}/.heroku/vendor/${NODE_BASENAME}
 
-if [ -f "$NODE_HOME" ]
-    echo "-----> Installing node"
-    # make a temp directory
-    tempdir="$( mktemp -t node_XXXX )"
-    rm -rf $tempdir
-    mkdir -p $tempdir
+if [ -f "$NODE_HOME" ];
+    then
+        echo "-----> Installing node"
+        # make a temp directory
+        tempdir="$( mktemp -t node_XXXX )"
+        rm -rf $tempdir
+        mkdir -p $tempdir
 
-    pushd $tempdir
-    curl -s -L -o tmp-nodejs.tar.gz $NODE_ARCHIVE
-    tar -zxvf tmp-nodejs.tar.gz > /dev/null
-    rm tmp-nodejs.tar.gz
+        pushd $tempdir
+        curl -s -L -o tmp-nodejs.tar.gz $NODE_ARCHIVE
+        tar -zxvf tmp-nodejs.tar.gz > /dev/null
+        rm tmp-nodejs.tar.gz
 
-    mkdir -v -p $BUILD_DIR/.heroku/vendor
-    rm -rf $NODE_HOME
-    mv $tempdir/$NODE_BASENAME $NODE_HOME
-    mkdir -v -p $HOME/.heroku/python/bin
-    ln -s -f $NODE_HOME/node $HOME/.heroku/python/bin/node
-    ln -s -f $NODE_HOME/bin/node-waf $HOME/.heroku/python/bin/node-waf
-    ln -s -f $NODE_HOME/bin/npm $HOME/.heroku/python/bin/npm
+        mkdir -v -p $BUILD_DIR/.heroku/vendor
+        rm -rf $NODE_HOME
+        mv $tempdir/$NODE_BASENAME $NODE_HOME
+        mkdir -v -p $HOME/.heroku/python/bin
+        ln -s -f $NODE_HOME/node $HOME/.heroku/python/bin/node
+        ln -s -f $NODE_HOME/bin/node-waf $HOME/.heroku/python/bin/node-waf
+        ln -s -f $NODE_HOME/bin/npm $HOME/.heroku/python/bin/npm
 
-    popd
-    echo "-----> Installed node"
+        popd
+        echo "-----> Installed node"
 fi
+
 echo "-----> Node available at ${$HOME}/.heroku/python/bin/node"
 ls -l $HOME/.heroku/python/bin/node
