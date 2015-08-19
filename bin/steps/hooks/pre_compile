@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
 
 echo "-----> Running pre-compile hook"
-echo $(pwd)
 
 if [ -f bin/pre_compile ]; then
-    echo "-----> Running pre-compile hook"
+    echo "-----> Running custom pre-compile hook"
     chmod +x bin/pre_compile
     sub-env bin/pre_compile
 fi
+
+pre_compile

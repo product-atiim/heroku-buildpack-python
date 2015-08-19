@@ -3,21 +3,21 @@ set -eo pipefail
 
 # The post_compile hook is run by heroku-buildpack-python
 
-echo "-----> I'm pre-compile hook"
+echo "-----> Default web pre-compile hook"
 
 # Work around Heroku bug whereby pylibmc isn't available during
 # compile phase. See: https://github.com/heroku/heroku-buildpack-python/issues/57
 export MEMCACHE_SERVERS='' MEMCACHIER_SERVERS=''
 
-if [ -f bin/install_nodejs ]; then
+if [ -f install_nodejs ]; then
     echo "-----> Running install_nodejs"
-    chmod +x bin/install_nodejs
-    bin/install_nodejs
+    chmod +x install_nodejs
+    install_nodejs
 
-    if [ -f bin/install_yuglify ]; then
+    if [ -f install_yuglify ]; then
         echo "-----> Running install_yuglify"
         chmod +x bin/install_yuglify
-        bin/install_yuglify
+        install_yuglify
     fi
 fi
 
@@ -33,4 +33,4 @@ fi
     #~ bin/run_compress
 #~ fi
 
-echo "-----> Pre-compile done"
+echo "-----> Default web pre-compile done"
