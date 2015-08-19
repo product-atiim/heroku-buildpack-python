@@ -23,7 +23,7 @@ if [ ! -f "${HOME}/.heroku/python/bin/node" ];
         rm -rf ${BUILD_DIR}/.heroku/vendor/node*
         mv $tempdir/$NODE_BASENAME $NODE_HOME
         mkdir -v -p $HOME/.heroku/python/bin
-        ln -s -f $NODE_HOME/node $HOME/.heroku/python/bin/node
+        ln -s -f $NODE_HOME/bin/node $HOME/.heroku/python/bin/node
         ln -s -f $NODE_HOME/bin/node-waf $HOME/.heroku/python/bin/node-waf
         ln -s -f $NODE_HOME/bin/npm $HOME/.heroku/python/bin/npm
 
@@ -31,4 +31,4 @@ if [ ! -f "${HOME}/.heroku/python/bin/node" ];
         echo "-----> Installed node"
 fi
 
-echo "-----> Node available at version $(node --version)"
+echo "-----> Node available at version $($HOME/.heroku/python/bin/node --version)"
