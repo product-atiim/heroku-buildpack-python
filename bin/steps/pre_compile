@@ -15,6 +15,9 @@ $BIN_DIR/steps/install_nodejs
 echo "-----> Running install_yuglify"
 $BIN_DIR/steps/install_yuglify
 
+echo "-----> Running install_node-sass"
+$BIN_DIR/steps/install_node-sass
+
 #~ if [ -f bin/run_collectstatic ]; then
     #~ echo "-----> Running run_collectstatic"
     #~ chmod +x bin/run_collectstatic
