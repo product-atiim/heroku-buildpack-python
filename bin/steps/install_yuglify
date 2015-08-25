@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 set -eo pipefail
 
-$HOME/.heroku/python/bin/npm install -g yuglify
+$HOME/.heroku/python/bin/npm install -g yuglify@0.1.4
