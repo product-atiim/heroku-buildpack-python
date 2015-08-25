@@ -18,6 +18,9 @@ $BIN_DIR/steps/install_yuglify
 echo "-----> Running install_node-sass"
 $BIN_DIR/steps/install_node-sass
 
+echo "-----> Running install_bower"
+$BIN_DIR/steps/install_bower
+
 #~ if [ -f bin/run_collectstatic ]; then
     #~ echo "-----> Running run_collectstatic"
     #~ chmod +x bin/run_collectstatic
