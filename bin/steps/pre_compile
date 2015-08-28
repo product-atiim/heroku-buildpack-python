@@ -15,6 +15,9 @@ $BIN_DIR/steps/install_nodejs
 echo "-----> Running install_yuglify"
 $BIN_DIR/steps/install_yuglify
 
+echo "-----> Running install_uglifyjs"
+$BIN_DIR/steps/install_uglifyjs
+
 echo "-----> Running install_node-sass"
 $BIN_DIR/steps/install_node-sass
 
