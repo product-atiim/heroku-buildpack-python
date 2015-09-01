@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
 set -eo pipefail
 
-$HOME/.heroku/python/bin/npm --loglevel info install -g
+$HOME/.heroku/python/bin/npm install -g
+
+$HOME/.heroku/python/bin/npm install -g bower-installer@1.2.0

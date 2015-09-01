@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-set -eo pipefail
-
-$HOME/.heroku/python/bin/npm install -g node-sass@3.2.0
