@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 set -eo pipefail
 
-bower-installer
+$HOME/.heroku/python/bin/bower-installer
