@@ -5,3 +5,5 @@ if [ -f bin/post_compile ]; then
     chmod +x bin/post_compile
     sub-env bin/post_compile
 fi
+
+sub-env $BIN_DIR/steps/post_compile
