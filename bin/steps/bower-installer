@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 set -eo pipefail
 
-/app/.heroku/vendor/node-v0.12.7-linux-x64/bin/node ./node_modules/bower-installer/bower-installer.js --remove
+node ./node_modules/bower-installer/bower-installer.js --remove
