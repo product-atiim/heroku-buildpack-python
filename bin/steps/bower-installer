@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 set -eo pipefail
 
-bower-installer --remove
+./node_modules/bower-installer/bower-installer.js --remove
