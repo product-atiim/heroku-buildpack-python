@@ -9,8 +9,4 @@ echo "-----> Default web post-compile hook"
 # compile phase. See: https://github.com/heroku/heroku-buildpack-python/issues/57
 export MEMCACHE_SERVERS='' MEMCACHIER_SERVERS=''
 
-echo "-----> Removing all node dependencies"
-
-npm ls -gp | awk -F/ '/node_modules/ && !/node_modules.*node_modules/ {print $NF}' | xargs npm -g rm
-
 echo "-----> Default web post-compile done"
