@@ -9,12 +9,6 @@ echo "-----> Default web pre-compile hook"
 # compile phase. See: https://github.com/heroku/heroku-buildpack-python/issues/57
 export MEMCACHE_SERVERS='' MEMCACHIER_SERVERS=''
 
-echo "-----> Running install_nodejs"
-$BIN_DIR/steps/install_nodejs
-
-echo "-----> Running npm install"
-$BIN_DIR/steps/npm-install
-
 echo "-----> Running bower-installer"
 $BIN_DIR/steps/bower-installer
 
