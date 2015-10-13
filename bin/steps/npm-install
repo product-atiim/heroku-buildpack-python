@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
 set -eo pipefail
 
-$HOME/.heroku/python/bin/npm install -g
-
-$HOME/.heroku/python/bin/npm install -g bower-installer@1.2.0
+echo "-----> npm available at version $(npm --version)"
