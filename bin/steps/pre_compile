@@ -18,6 +18,12 @@ $BIN_DIR/steps/npm-install
 echo "-----> Running bower-installer"
 $BIN_DIR/steps/bower-installer
 
+echo "-----> yuglify available at version $(yuglify --version)"
+echo "-----> uglifyjs available at version $(uglifyjs --version)"
+echo "-----> node-sass available at version $(node-sass --version)"
+
+
+
 #~ if [ -f bin/run_collectstatic ]; then
     #~ echo "-----> Running run_collectstatic"
     #~ chmod +x bin/run_collectstatic
