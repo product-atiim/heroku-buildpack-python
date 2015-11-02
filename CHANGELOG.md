@@ -1,5 +1,9 @@
 # Python Buildpack Changelog
 
+## v70 (2015-10-29)
+
+Improved compatibility with multi and node.js buildpacks.
+
 ## v69 (2015-10-12)
 
 Revert to v66.
@@ -53,4 +57,3 @@ Default Python is now latest 2.7.10. Updated Pip and Distribute.
 - Default Python version is v2.7.10
 - Setuptools updated to v16.0
 - Pip updated to v7.0.1
-
