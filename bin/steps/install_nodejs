@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-set -eo pipefail
-
-echo "-----> Node available at version $(node --version)"
